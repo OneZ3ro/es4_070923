@@ -10,10 +10,10 @@ import fantasy from "./data/fantasy.json";
 import BookList from "./components/BookList";
 
 function App() {
-  let myArrFantasy = [];
-  for (let i = 0; i < 10; i++) {
-    myArrFantasy.push(fantasy[i]);
-  }
+  // let myArrFantasy = [];
+  // for (let i = 0; i < 10; i++) {
+  //   myArrFantasy.push(fantasy[i]);
+  // }
   return (
     <div className="App">
       <header>
@@ -24,7 +24,7 @@ function App() {
         {/* <AllTheBooks /> */}
         {/* <SingleBook myObj={fantasy[0]} /> */}
         <h3 style={{ marginBottom: "20px" }}>Fantasy</h3>
-        <BookList myArr={myArrFantasy} />
+        <BookList myArr={fantasy} />
       </main>
 
       <MyFooter text="Il mio footer" />
