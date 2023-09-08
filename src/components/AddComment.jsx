@@ -11,11 +11,14 @@ class AddComment extends Component {
   };
 
   handleChange = (propertyName, propertyValue) => {
-    this.setState({ ...this.state.userComment, [propertyName]: propertyValue });
+    this.setState({
+      userComment: { ...this.state.userComment, [propertyName]: propertyValue },
+    });
   };
 
   handleSubmit = async (event) => {
     event.preventDefault();
+    console.log(this.state.userComment);
     const URL =
       "https://striveschool-api.herokuapp.com/api/comments/" +
       this.state.userComment.elementId;
@@ -29,6 +32,8 @@ class AddComment extends Component {
       },
     };
     try {
+      const response = await fetch(URL, method);
+      console.log(response);
     } catch (error) {
       console.log(error);
     }

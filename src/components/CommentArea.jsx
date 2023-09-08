@@ -24,7 +24,8 @@ class CommentArea extends Component {
       if (response.ok) {
         const parseComments = await response.json();
         this.setState({ comments: parseComments });
-        console.log(this.state);
+        console.log(parseComments);
+        console.log(this.state.comments);
       }
     } catch (error) {
       console.log(error);
@@ -37,7 +38,6 @@ class CommentArea extends Component {
   render() {
     return (
       <>
-        <>{console.log()}</>
         {this.state.comments.length === 0 && (
           <div>Non ci sono ancora commenti su questo libro</div>
         )}
